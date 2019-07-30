@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+<p>@DateTime.Now</p>
+<p>@DateTime.IsLeapYear(2016)</p>
+<p>Last week: @DateTime.Now - TimeSpan.FromDays(7)</p>
+
+@{ var value = 1339;}
+
+@if (value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+else if (value >= 1337)
+{
+    <p>The value is large.</p>
+}
+else
+{
+    <p>The value is odd and small.</p>
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        email:
+        <input type="email" id="Email" value="">
+        <button>Register</button>
+    </div>
+}
+
+
+
+<p>Use this area to provide additional information.</p>
